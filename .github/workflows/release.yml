@@ -1,19 +1,19 @@
-name: Validate
+name: Release
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_run:
+    workflows: [Validate]
+    types: [completed]
+    branches: [main]
 
 jobs:
-  validate:
+  release:
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -25,4 +25,8 @@ jobs:
       - run: npm ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.CI_NPM_TOKEN }}
-      - run: npm run lint
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.CI_NPM_TOKEN }}
