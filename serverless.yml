@@ -17,6 +17,12 @@ functions:
       - httpApi:
           path: /health
           method: get
+  version:
+    handler: src/version/handler.version
+    events:
+      - httpApi:
+          path: /
+          method: get
 
 
 custom:
