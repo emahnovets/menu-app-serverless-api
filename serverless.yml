@@ -1,0 +1,19 @@
+service: menu-app-serverless-api
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+functions:
+  healthCheck:
+    handler: src/health-check/handler.healthCheck
+    events:
+      - httpApi:
+          path: /health
+          method: get

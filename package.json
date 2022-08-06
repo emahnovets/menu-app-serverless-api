@@ -8,7 +8,8 @@
     "install:pre-commit-hooks": "pre-commit install --install-hooks --allow-missing-config -t pre-commit -t prepare-commit-msg -t commit-msg -f",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js,.ts src",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "sls": "serverless"
   },
   "repository": {
     "type": "git",
@@ -26,9 +27,13 @@
     "@emahnovets/eslint-config-typescript": "^1.0.1",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.5",
+    "@types/aws-lambda": "^8.10.101",
     "eslint": "^8.21.0",
     "prettier": "^2.7.1",
     "semantic-release": "^19.0.3",
+    "serverless": "^3.21.0",
+    "serverless-offline": "^9.1.6",
+    "serverless-plugin-typescript": "^2.1.2",
     "typescript": "^4.7.4"
   }
 }
