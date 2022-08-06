@@ -1,5 +1,11 @@
 version: 2
 
+registries:
+  npm-github:
+    type: npm-registry
+    url: https://npm.pkg.github.com
+    token: ${{secrets.CI_NPM_TOKEN}}
+
 updates:
 
   - package-ecosystem: "github-actions"
@@ -9,5 +15,7 @@ updates:
 
   - package-ecosystem: "npm"
     directory: "/"
+    registries:
+      - npm-github
     schedule:
       interval: "daily"
