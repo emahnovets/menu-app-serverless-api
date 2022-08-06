@@ -1,7 +1,7 @@
 service: menu-app-serverless-api
 
 plugins:
-  - serverless-plugin-typescript
+  - serverless-esbuild
   - serverless-offline
 
 frameworkVersion: '3'
@@ -17,3 +17,9 @@ functions:
       - httpApi:
           path: /health
           method: get
+
+
+custom:
+  esbuild:
+    watch:
+      pattern: ['src/**/*.ts']

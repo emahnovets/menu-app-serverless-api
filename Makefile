@@ -1,3 +1,6 @@
+offline:
+	npm run sls offline
+
 deploy:
 	npm run sls deploy
 
