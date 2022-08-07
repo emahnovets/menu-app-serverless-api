@@ -6,3 +6,9 @@ deploy:
 
 remove:
 	npm run sls remove
+
+create_domain:
+	npm run sls create_domain
+
+delete_domain:
+	npm run sls delete_domain

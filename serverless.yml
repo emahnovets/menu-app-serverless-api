@@ -2,6 +2,7 @@ service: menu-app-serverless-api
 
 plugins:
   - serverless-esbuild
+  - serverless-domain-manager
   - serverless-offline
 
 frameworkVersion: '3'
@@ -9,6 +10,7 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs16.x
+  region: eu-central-1
 
 functions:
   healthCheck:
@@ -29,3 +31,14 @@ custom:
   esbuild:
     watch:
       pattern: ['src/**/*.ts']
+
+  customDomain:
+    domainName: api.menu-app.em-dev.org
+    stage: dev
+    certificateName: '*.menu-app.em-dev.org'
+    createRoute53Record: true
+    createRoute53IPv6Record: true
+    endpointType: 'regional'
+    securityPolicy: tls_1_2
+    apiType: http
+    autoDomain: false
