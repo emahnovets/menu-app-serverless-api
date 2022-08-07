@@ -35,6 +35,8 @@ custom:
   esbuild:
     watch:
       pattern: ['src/**/*.ts']
+    packagerOptions:
+      target: node16
 
   customDomain:
     domainName: api.menu-app.em-dev.org

@@ -9,7 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js,.ts src",
     "semantic-release": "semantic-release",
-    "sls": "serverless"
+    "sls": "serverless",
+    "types:check": "tsc --noEmit",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",

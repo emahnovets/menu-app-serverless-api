@@ -25,4 +25,5 @@ jobs:
       - run: npm ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.CI_NPM_TOKEN }}
+      - run: npm run types:check
       - run: npm run lint
