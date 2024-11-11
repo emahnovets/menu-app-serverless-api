@@ -39,9 +39,9 @@ custom:
       target: node16
 
   customDomain:
-    domainName: api.menu-app.em-dev.org
+    domainName: api.menu-app.demo.emahnovets.dev
     stage: dev
-    certificateName: '*.menu-app.em-dev.org'
+    certificateName: '*.menu-app.demo.emahnovets.dev'
     createRoute53Record: true
     createRoute53IPv6Record: true
     endpointType: 'regional'
