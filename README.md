@@ -1,1 +1,1 @@
-# menu-app-serverless-api
+# Serverless API for menu app 
